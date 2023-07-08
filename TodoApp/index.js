@@ -14,6 +14,16 @@ app.use(express.json());
 const dbConnection = require("./config/db");
 dbConnection();
 
+// mounting router
+
+const todoRouter = require("./routers/todoRouter");
+app.use("/api/v1", todoRouter);
+
+
+app.get("/", (req, res) => {
+    res.send("<h1>This is home page baby </h1>")
+})
+
 
 app.listen(port, () => {
     console.log(`server is running on port ${port}`)
