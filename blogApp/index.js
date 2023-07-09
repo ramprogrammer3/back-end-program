@@ -14,6 +14,10 @@ app.use(express.json())
 const dbConnection = require("./config/db");
 dbConnection();
 
+// mounting router
+const blog = require("./routers/blog")
+app.use("/api/v1", blog);
+
 
 app.listen(port, () => {
     console.log(`server is runnin on port ${port}`);
