@@ -19,6 +19,11 @@ const blog = require("./routers/blog")
 app.use("/api/v1", blog);
 
 
+app.get("/", (req, res) => {
+    res.send("<h1>This is home page baby </h1>")
+})
+
+
 app.listen(port, () => {
     console.log(`server is runnin on port ${port}`);
 })
