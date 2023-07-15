@@ -33,7 +33,7 @@ exports.getAllPosts = async (req, res) => {
 
     try {
 
-        const posts = await Post.find().populate('comments').exec();
+        const posts = await Post.find().populate('comments').populate("likes").exec();
         res.json({
             posts
         })
@@ -45,6 +45,5 @@ exports.getAllPosts = async (req, res) => {
         })
 
     }
-
 
 }
