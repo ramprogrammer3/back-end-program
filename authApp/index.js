@@ -1,9 +1,13 @@
 
 const express = require("express")
 const app = express();
+const cookieParser = require("cookie-parser");
 
 require("dotenv").config();
 const port = process.env.PORT || 4000;
+
+// cookie parser
+app.use(cookieParser());
 
 //middlerware to json parse
 app.use(express.json());
