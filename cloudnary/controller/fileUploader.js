@@ -64,7 +64,7 @@ exports.imageUpload = async (req, res) => {
         console.log(file);
 
         // validation or supported type
-        const supportedType = ["jpeg", "jpg", "png"];
+        const supportedType = ["jpeg", "jpg", "png", "webp"];
 
         // checking file type
         const fileType = file.name.split('.')[1].toLowerCase();
@@ -216,6 +216,5 @@ exports.imageSizeReducer = async (req, res) => {
         })
 
     }
-
 
 }
